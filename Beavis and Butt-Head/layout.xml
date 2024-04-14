@@ -1,0 +1,217 @@
+<layout width="1920" height="1080" font="fonts/OpenSans.ttf" loadFontSize="36" fontColor="000000">
+  <sound type="load" src="sounds/load.wav" />
+  <sound type="unload" src="sounds/unload.wav" />
+  <sound type="highlight" src="sounds/highlight.wav" />
+  <sound type="select" src="sounds/select.wav" />
+
+  <menu type="custom" imageType="logo" orientation="vertical" width="500" height="100" scrollTime=".30"  minScrollTime=".06" scrollAcceleration=".04">
+    <itemDefaults spacing="2" y="center" x="center" yOrigin="center" xOrigin="center" fontSize="35" width="260" maxHeight="120" layer="18"/>
+
+    <item xOffset="810" angle="39" yOffset="-664" alpha="0"/>
+
+    <item xOffset="750" angle="32" yOffset="-568">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="690" angle="27" yOffset="-464">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="645" angle="20" yOffset="-354">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="610" angle="14" yOffset="-238">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="590" angle="8" yOffset="-120">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="580" yOffset="0" width="400" maxHeight="200" alpha="1" layer="19" selected="true">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>      
+    <item xOffset="590" angle="-8" yOffset="120">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="610" angle="-14" yOffset="238">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="645" angle="-20" yOffset="354">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="690" angle="-27" yOffset="464">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+    <item xOffset="750" angle="-32" yOffset="568">
+      <onMenuExit>
+        <set duration="0.1">
+          <animate type="alpha" to="0"/>
+        </set>
+      </onMenuExit>
+    </item>
+
+    <item xOffset="810" angle="-39" yOffset="664" alpha="0"/>
+  </menu>
+
+  <!-- Wheel Selected Game Highlight Pulse Animation -->
+  <reloadableImage type="logo" x="1540" y="540" yOrigin="center" xOrigin="center" width="400" maxHeight="200" layer="9">
+    <onPlaylistEnter>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onPlaylistEnter>
+    <onPlaylistExit>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onPlaylistExit>
+    <onMenuJumpEnter>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuJumpEnter>
+    <onMenuJumpExit>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuJumpExit>
+    <onMenuExit>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuExit>
+    <onMenuEnter>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuEnter>
+    <onMenuIdle>
+      <set duration="0.4">
+        <animate type="alpha" to="0"/>
+      </set>
+      <set duration="0.001">
+        <animate type="width" to="400" algorithm="easeinquadratic"/>
+        <animate type="maxHeight" to="200" algorithm="easeinquadratic"/>
+        <animate type="alpha" to="0.9"/>
+      </set>
+      <set duration="1.3">
+        <animate type="width" to="480" algorithm="easeinquadratic"/>
+        <animate type="maxHeight" to="240" algorithm="easeinquadratic"/>
+        <animate type="alpha" to="0.0"/>
+      </set>
+      <set duration="0.4">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuIdle>
+    <onMenuScroll>
+      <set duration="0.001">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuScroll>
+  </reloadableImage>
+
+    <reloadableVideo imageType="screenshot" volume="0" alpha="0" xOrigin="center" yOrigin="center" x="737" y="502" maxHeight="347" width="477" layer="5">
+    <onHighlightExit>
+      <set duration="0.001">
+        <animate type="volume" to="0" algorithm="easeinquadratic"/>
+      </set>
+    </onHighlightExit>
+    <onMenuIdle>
+      <set duration="0.5">
+        <animate type="volume" to="0.6" algorithm="easeinquadratic"/>
+        <animate type="alpha" to="1" algorithm="easeinquadratic"/>
+      </set>
+    </onMenuIdle>
+  </reloadableVideo>
+
+  <image src="images/Beavis and Butt-Head.png" height="stretch" layer="6"/>
+
+  <!-- first letter -->
+  <reloadableImage type="firstLetter" mode="commonlayout" alpha="0" width="27" Height="540" x="1880" yOrigin="center" y="542" menuScrollReload="true" layer="17">
+    <onMenuIdle>
+      <set duration="1.2">
+        <animate type="alpha" to="0"/>
+        <animate type="xoffset" to="0"/>
+      </set>
+    </onMenuIdle>
+    <onMenuScroll>
+      <set duration="0.2">
+        <animate type="alpha" to="1"/>
+      </set>
+    </onMenuScroll>
+    <onMenuJumpEnter><set duration="0.001"><animate type="alpha" to="1"/></set></onMenuJumpEnter>
+    <onAttract><set duration="1.2"><animate type="xoffset" to="200"/></set></onAttract>
+  </reloadableImage>
+
+  <image src="images/right_strip.png" alpha="0" xOrigin="right" yOrigin="center" x="right" y="center" layer="16">
+    <onMenuIdle>
+      <set duration="1.2">
+        <animate type="alpha" to="0"/>
+      </set>
+    </onMenuIdle>
+    <onMenuScroll>
+      <set duration="0.2">
+        <animate type="alpha" to="1"/>
+      </set>
+    </onMenuScroll>
+    <onMenuJumpEnter><set duration="0.001"><animate type="alpha" to="0.5"/></set></onMenuJumpEnter>
+  </image>
+
+  <!-- Number of Games -->
+  <reloadableText type="collectionIndexSize" mode="commonlayout" x="1900" y="1060" xOrigin="right" yOrigin="bottom" fontSize="36" menuScrollReload="true" layer="16"/>
+
+  <!-- Playlist -->
+  <reloadableText type="playlist" textFormat="uppercase" x="1860" y="center" xOrigin="right" yOrigin="center" fontSize="40" layer="8">
+    <onIdle>
+      <set duration="0.2"><animate type="alpha" to="1" algorithm="easeinquadratic"/></set>
+      <set duration="1.5"><animate type="alpha" to="0" algorithm="easeinquadratic"/></set>
+    </onIdle>
+  </reloadableText>
+
+  <reloadableImage type="isFavorite" mode="commonlayout" x="20" y="900" menuScrollReload="true" layer="16"/>
+
+  <reloadableScrollingText type="story" x="25" y="20" width="423" height="288" fontSize="32" loadFontSize="32" fontColor="000000" direction="vertical" alignment="justified" scrollingSpeed="15" startPosition="15" endPosition="20" startTime="4" endTime="4" alpha="1" layer="6"/>
+
+  <reloadableText type="title" x="20" y="1010" xOrigin="left" yOrigin="bottom" loadFontSize="72" fontSize="72" menuScrollReload="true" layer="16"/>
+  <reloadableText type="year" x="20" y="1010" xOrigin="left" yOrigin="top" fontSize="36" menuScrollReload="true" layer="16"/>
+  <reloadableText type="manufacturer" x="80" y="1010" xOrigin="left" yOrigin="top" fontSize="36" menuScrollReload="true" layer="16"/>
+</layout>
+
+  

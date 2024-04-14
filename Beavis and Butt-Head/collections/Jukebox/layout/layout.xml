@@ -1,0 +1,250 @@
+<layout width="1920" height="1080" font="fonts/OpenSans.ttf" loadFontSize="60" fontColor="FFFFFF">
+
+	<!-- Layers
+		00 = ---
+		01 = Background
+		02 = ---
+		03 = ---
+		04 = ---
+		05 = Generic video (for audio-only files)
+		06 = ---
+		07 = Full Screen video
+		08 = ---
+		09 = Select Arrow
+		10 = ---
+		11 = ---
+		12 = ---
+		13 = Title playing
+		14 = ---
+		15 = Select Arrow
+		16 = ---
+		17 = Wheel items
+		18 = ---
+		18 = ---
+		18 = ---
+		19 = ---
+	-->
+
+<!-- Background Video (for audio-only files) -->
+    <video src="videos/jukebox.mp4" numLoops="0" alpha="1" volume="0" width="stretch" maxHeight="stretch" layer="5"/>
+
+
+<!-- Simple Full Screen Video -->
+    <reloadableVideo imageType="screenshot" jukebox="true" xOrigin="center" yOrigin="center" x="center" y="center" alpha="1" volume="1" width="stretch" maxHeight="stretch" layer="7"/>
+
+<!-- Title Playing -->
+    <reloadableScrollingText type="title" x="0" xOffset="100" y="60" yOrigin="center" fontSize="60" width="1850" direction="horizontal" scrollingSpeed="30" startPosition="0" alpha="0" startTime="5" endTime="3" layer="13">
+        <onMenuIdle>
+			<set duration="3"><animate type="nop"/></set>
+			<set duration="5"><animate type="alpha" to="0.6"/></set>
+			<set duration="3"><animate type="alpha" to="0"/></set>
+		</onMenuIdle>
+		<onMenuJumpEnter>
+			<set duration="0.001"><animate type="alpha" to="0"/></set>
+		</onMenuJumpEnter>
+		<onMenuScroll>
+			<set duration="0.001"><animate type="alpha" to="0"/></set>
+		</onMenuScroll>
+    </reloadableScrollingText>
+
+
+<!-- Select Arrow -->
+	<image src="images/selected2.png" x="-65" y="510" layer="15">
+		<onIdle>
+			<set duration="3"><animate type="nop"/></set>
+			<set duration=".25"><animate type="alpha" to="0"/></set>
+		</onIdle>
+		<onMenuScroll>
+			<set duration=".001"><animate type="alpha" to="1"/></set>
+			<set duration="0.1"><animate type="x" to="-50"/></set>
+			<set duration="0.1"><animate type="x" to="-65"/></set>
+		</onMenuScroll>
+	</image>
+
+
+<!-- Menu Wheel (Level 0) -->
+	<menu type="custom" imageType="logo" mode="layout" orientation="vertical" scrollTime=".30" minScrollTime=".06" scrollAcceleration=".04">
+	
+		<itemDefaults spacing="2" x="705" y="center" yOrigin="center" fontSize="60" fontColor="FFFF33" layer="17"/>
+		
+		<!-- Menu Wheel Item 1 -->
+		<item xOffset="-810" yOffset="-664" alpha="0" />
+		
+		<!-- Menu Wheel Item 2 -->
+		<item xOffset="-750" yOffset="-568" fontColor="FFA701">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 3 -->
+		<item xOffset="-690" yOffset="-464" fontColor="FFBA01">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 4 -->
+		<item xOffset="-645" yOffset="-354" fontColor="FFCD01">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 5 -->
+		<item xOffset="-610" yOffset="-238" fontColor="FFDA00">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 6 -->
+		<item xOffset="-590" yOffset="-120" fontColor="FFE800">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 7 [Selection] -->
+		<item xOffset="-570" yOffset="0" selected="true" fontColor="FFFF33">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration="3">
+					<animate type="x"		to="0"/>
+					<animate type="xOffset" to="100"/>
+					<animate type="y"		to="60"/>
+					<animate type="width"	to="1850"/>
+					<animate type="alpha"	to="0"/>
+				</set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1">
+					<animate type="x"		to="705"/>
+					<animate type="xOffset" to="-570"/>
+					<animate type="y"		to="center"/>
+					<animate type="width"	to="1850"/>
+					<animate type="alpha"	to="0"/>
+				</set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1">
+					<animate type="x"		to="705"/>
+					<animate type="xOffset" to="-570"/>
+					<animate type="y"		to="center"/>
+					<animate type="width"	to="1850"/>
+					<animate type="alpha"	to="0"/>
+				</set>
+			</onMenuScroll>
+		</item>
+
+		<!-- Menu Wheel Item 8 -->
+		<item xOffset="-590" yOffset="120" fontColor="FFE800">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 9 -->
+		<item xOffset="-610" yOffset="238" fontColor="FFDA00">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 10 -->
+		<item xOffset="-645" yOffset="354" fontColor="FFCD01">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 11 -->
+		<item xOffset="-690" yOffset="464" fontColor="FFBA01">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 12 -->
+		<item xOffset="-750" yOffset="568" fontColor="FFA701">
+			<onIdle>
+				<set duration="3"><animate type="nop"/></set>
+				<set duration=".25"><animate type="alpha" to="0"/></set>
+			</onIdle>
+			<onMenuJumpEnter>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuJumpEnter>
+			<onMenuScroll>
+				<set duration=".1"><animate type="alpha" to="1"/></set>
+			</onMenuScroll>
+		</item>
+		
+		<!-- Menu Wheel Item 13 -->
+		<item xOffset="-810" yOffset="664" alpha="0" />
+		
+	</menu>
+
+</layout>
